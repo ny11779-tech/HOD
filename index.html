@@ -124,6 +124,94 @@
     ];
 
     const scores = { EI: 0, NS: 0, FT: 0, PJ: 0 };
+      // mbti 설명
+    const mbti_descriptions = {
+      "ESTJ": "성실하고 활동적인 리더형 멍멍이!",
+      "ESFJ": "사랑이 넘치고 사교성 좋은 가족형 멍멍이!",
+      "ISTJ": "차분하고 신중한 계획가 멍멍이!",
+      "ISFJ": "다정하고 보호 본능 강한 힐러 멍멍이!",
+      "ESTP": "모험심 가득한 활발한 탐험가 멍멍이!",
+      "ESFP": "장난꾸러기 즐거운 파티 멍멍이!",
+      "ISTP": "침착하고 관찰력 뛰어난 해결사 멍멍이!",
+      "ISFP": "감성적이고 조용한 예술가 멍멍이!",
+      "ENFJ": "따뜻한 리더십으로 친구들을 이끄는 멍멍이!",
+      "ENTJ": "똑똑하고 자신감 넘치는 전략가 멍멍이!",
+      "INFJ": "조용하지만 깊은 마음을 가진 사려 깊은 멍멍이!",
+      "INTJ": "논리적이고 독립적인 천재 멍멍이!",
+      "ENFP": "상상력이 풍부하고 활발한 아이디어 뱅크 멍멍이!",
+      "ENTP": "재치 있고 논쟁을 즐기는 토론가 멍멍이!",
+      "INFP": "순수하고 이상주의적인 꿈꾸는 멍멍이!",
+      "INTP": "분석적이고 호기심 많은 탐구자 멍멍이!"
+    };
+
+    // 제품 추천
+    const product_recommendations = {
+      "ESTJ": {
+        image: "dog_images/glorious.png",
+        desc: "활동적인 ESTJ에게는 우아한 Glorious를 추천합니다!"
+      },
+      "ESFJ": {
+        image: "dog_images/glorious.png",
+        desc: "사교성 좋은 ESFJ에게는 우아한 향기의 Glorious를 추천합니다!"
+      },
+      "ISTJ": {
+        image: "dog_images/adventurous.png",
+        desc: "차분한 ISTJ에게는 시원한 향기의 Adventurous를 추천합니다!"
+      },
+      "ISFJ": {
+        image: "dog_images/adventurous.png",
+        desc: "차분한 ISFJ에게는 시원한 향기의 Adventurous를 추천합니다!"
+      },
+      "ESTP": {
+        image: "dog_images/glorious.png",
+        desc: "활발한 ESTP에게는 우아한 향기의 Glorious를 추천합니다!"
+      },
+      "ESFP": {
+        image: "dog_images/harmonious.png",
+        desc: "장난꾸러기 ESFP에게는 은은한 향기의 Harmonious를 추천합니다!"
+      },
+      "ISTP": {
+        image: "dog_images/adventurous.png",
+        desc: "침착한 ISTP에게는 시원한 향기의 Adventurous를 추천합니다!"
+      },
+      "ISFP": {
+        image: "dog_images/harmonious.png",
+        desc: "감성적인 ISFP에게는 은은한 향기의 Harmonious를 추천합니다!"
+      },
+      "ENFJ": {
+        image: "dog_images/adventurous.png",
+        desc: "따뜻한 ENFJ에게는 시원한 향기의 Adventurous를 추천합니다!"
+      },
+      "ENTJ": {
+        image: "dog_images/harmonious.png",
+        desc: "자신감 넘치는 ENTJ에게는 은은한 향기의 Harmonious를 추천합니다!"
+      },
+      "INFJ": {
+        image: "dog_images/glorious.png",
+        desc: "사려 깊은 INFJ에게는 우아한 향기의 Glorious를 추천합니다!"
+      },
+      "INTJ": {
+        image: "dog_images/glorious.png",
+        desc: "논리적인 INTJ에게는 우아한 향기의 Glorious를 추천합니다!"
+      },
+      "ENFP": {
+        image: "dog_images/adventurous.png",
+        desc: "상상력이 풍부한 ENFP에게는 시원한 향기의 Adventurous를 추천합니다!"
+      },
+      "ENTP": {
+        image: "dog_images/harmonious.png",
+        desc: "재치 있는 ENTP에게는 은은한 향기의 Harmonious를 추천합니다!"
+      },
+      "INFP": {
+        image: "dog_images/adventurous.png",
+        desc: "이상주의적인 INFP에게는 시원한 향기의 Adventurous를 추천합니다!"
+      },
+      "INTP": {
+        image: "dog_images/harmonious.png",
+        desc: "호기심 많은 INTP에게는 은은한 향기의 Harmonious를 추천합니다!"
+      }
+    };
+
     const answered = Array(questions.length).fill(false);
     const container = document.getElementById("questionsContainer");
 
