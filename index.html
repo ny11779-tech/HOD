@@ -6,28 +6,28 @@
   <style>
     body {
       font-family: '맑은 고딕', AppleSDGothicNeo, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 30px;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
       background: #fff8f0;
       color: #333;
-      font-size: 20px;
+      font-size: 24px;
     }
     h1, h2, h3 {
       text-align: center;
       color: #d96b3f;
-      font-size: 26px;
+      font-size: 30px;
     }
     .question {
-      margin-bottom: 30px;
-      padding: 20px;
+      margin-bottom: 40px;
+      padding: 25px;
       background: #fff0e5;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(217,107,63,0.3);
-      font-size: 20px;
+      font-size: 24px;
     }
     .question img {
-      max-width: 150px;
+      max-width: 180px;
       height: auto;
       display: block;
       margin: 10px auto 15px;
@@ -38,18 +38,21 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      gap: 10px;
     }
     .button-group button {
       flex: 1;
-      margin: 5px;
       max-width: 48%;
+    }
+    .button-group button:nth-child(2) {
+      text-align: right;
     }
     button {
       background-color: #d96b3f;
       color: white;
       border: none;
-      padding: 14px 20px;
-      font-size: 18px;
+      padding: 16px 22px;
+      font-size: 20px;
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
@@ -63,26 +66,26 @@
     }
     #resultSection {
       display: none;
-      margin-top: 40px;
-      padding: 30px;
+      margin-top: 50px;
+      padding: 35px;
       background: #ffe6cc;
       border-radius: 15px;
       box-shadow: 0 3px 10px rgba(217,107,63,0.5);
       text-align: center;
-      font-size: 20px;
+      font-size: 22px;
     }
     #resultSection img {
-      max-width: 320px;
-      margin-top: 20px;
+      max-width: 350px;
+      margin-top: 25px;
       border-radius: 15px;
       box-shadow: 0 3px 6px rgba(0,0,0,0.2);
     }
     #btnShowResult {
       display: block;
-      margin: 30px auto;
+      margin: 40px auto;
       background-color: #f5825a;
-      font-size: 20px;
-      padding: 18px 35px;
+      font-size: 22px;
+      padding: 20px 40px;
       border-radius: 15px;
       font-weight: bold;
       cursor: pointer;
@@ -95,9 +98,8 @@
 </head>
 <body>
 
-  <!-- 기존 HTML은 동일 -->
   <h1>House of Dog X Cocco Square</h1>
-  <img src="dog_images/멍BTI 사진.png" alt="멍BTI 제목 이미지" style="width:100%; max-width:400px; display:block; margin: 0 auto 30px;" />
+  <img src="dog_images/멍BTI 사진.png" alt="멍BTI 제목 이미지" style="width:100%; max-width:420px; display:block; margin: 0 auto 30px;" />
 
   <div id="questionsContainer"></div>
   <button id="btnShowResult">결과 보기 🐾</button>
@@ -123,7 +125,6 @@
 
     const scores = { EI: 0, NS: 0, FT: 0, PJ: 0 };
     const answered = Array(questions.length).fill(false);
-
     const container = document.getElementById("questionsContainer");
 
     questions.forEach((q, idx) => {
@@ -179,6 +180,7 @@
         alert("모든 질문에 답변해주세요!");
         return;
       }
+
       let mbti = "";
       mbti += scores.EI >= 0 ? "E" : "I";
       mbti += scores.NS >= 0 ? "N" : "S";
@@ -195,6 +197,5 @@
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
     };
   </script>
-
 </body>
 </html>
