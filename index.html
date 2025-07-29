@@ -223,36 +223,42 @@
       img.alt = `질문 ${idx + 1} 이미지`;
       div.appendChild(img);
 
-      // 버튼 2개 영역
-      const btn1 = document.createElement("button");
-      btn1.textContent = "1. " + q[1];
-      btn1.onclick = () => {
-        if (answered[idx]) return;
-        scores[q[3]] += 1;
-        answered[idx] = true;
-        btn1.disabled = true;
-        btn2.disabled = true;
-        btn1.style.backgroundColor = "#a34b2c";
-        btn2.style.backgroundColor = "#d96b3f";
-      };
+  // 버튼 2개 영역을 감싸는 래퍼 div
+  const buttonWrapper = document.createElement("div");
 
-      const btn2 = document.createElement("button");
-      btn2.textContent = "2. " + q[2];
-      btn2.onclick = () => {
-        if (answered[idx]) return;
-        scores[q[3]] -= 1;
-        answered[idx] = true;
-        btn1.disabled = true;
-        btn2.disabled = true;
-        btn2.style.backgroundColor = "#a34b2c";
-        btn1.style.backgroundColor = "#d96b3f";
-      };
+  // 버튼 1
+  const btn1 = document.createElement("button");
+  btn1.textContent = "1. " + q[1];
+  btn1.onclick = () => {
+    if (answered[idx]) return;
+    scores[q[3]] += 1;
+    answered[idx] = true;
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn1.style.backgroundColor = "#a34b2c";
+    btn2.style.backgroundColor = "#d96b3f";
+  };
 
-      div.appendChild(btn1);
-      div.appendChild(btn2);
+  // 버튼 2
+  const btn2 = document.createElement("button");
+  btn2.textContent = "2. " + q[2];
+  btn2.style.float = "right"; // 오른쪽 정렬
+  btn2.onclick = () => {
+    if (answered[idx]) return;
+    scores[q[3]] -= 1;
+    answered[idx] = true;
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn2.style.backgroundColor = "#a34b2c";
+    btn1.style.backgroundColor = "#d96b3f";
+  };
 
-      container.appendChild(div);
-    });
+  buttonWrapper.appendChild(btn1);
+  buttonWrapper.appendChild(btn2);
+
+  div.appendChild(buttonWrapper);
+  container.appendChild(div);
+});
 
     // 결과 보기 버튼 이벤트
     document.getElementById("btnShowResult").onclick = () => {
